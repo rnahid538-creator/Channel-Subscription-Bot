@@ -109,8 +109,18 @@ def finalize_channel(message, ch_id, ch_name):
         raw_plans = message.text.split(',')
         plans_dict = {}
         for p in raw_plans:
-            t, pr = p.strip().split(':')
-            plans_dict[t] = pr
+    parts = p.strip().split(':')
+    
+    if len(parts) != 2:
+        raise ValueError("Invalid format")
+        
+    t = parts[0].strip()
+    pr = parts[1].strip()
+    
+    if not t.isdigit() or not pr.isdigit():
+        raise ValueError("Minutes and Price must be numbers")
+        
+    plans_dict[t] = pr
         
         channels_col.update_one({"channel_id": ch_id}, {"$set": {"name": ch_name, "plans": plans_dict, "admin_id": ADMIN_ID}}, upsert=True)
         bot_username = bot.get_me().username
