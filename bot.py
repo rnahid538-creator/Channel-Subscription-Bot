@@ -5,8 +5,8 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes
 
 TOKEN = os.getenv("BOT_TOKEN")
-ADMIN_ID = 123456789  # এখানে তোমার Telegram user ID বসাও
-GROUP_LINK = "https://t.me/your_private_group_link"
+ADMIN_ID = 8534308595  # এখানে তোমার Telegram user ID বসাও
+GROUP_LINK = "https://t.me/+eiFGZcO3yRk5MjVl"
 
 conn = sqlite3.connect("database.db", check_same_thread=False)
 cursor = conn.cursor()
@@ -47,7 +47,7 @@ async def plan_selected(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     await query.message.reply_text(
-        "💰 বিকাশ নাম্বার: 01XXXXXXXXX\n\n"
+        "💰 বিকাশ নাম্বার: 01741374715\n\n"
         "উপরের নাম্বারে টাকা পাঠিয়ে নিচের বাটনে চাপুন।",
         reply_markup=reply_markup
     )
