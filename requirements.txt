@@ -1,4 +1,1 @@
-pyTelegramBotAPI
-pymongo[srv]
-apscheduler
-flask
+python-telegram-bot==20.3
